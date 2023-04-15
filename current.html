@@ -2,15 +2,141 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Hello, world!</title>
+		<title>ratcodes - mock interview for today</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="description" content="" />
+		<meta
+			name="description"
+			content="This page holds the prompt for today's mock interviews."
+		/>
 		<link
 			href="https://cdn.jsdelivr.net/npm/modern-normalize@v1.1.0
 /modern-normalize.min.css"
 			rel="stylesheet"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="icon" href="favicon.png" />
+		<style>
+			:root {
+				font-family: "Roboto Flex", sans-serif;
+				font-size: 16px;
+				color: #16161d;
+			}
+
+			body {
+				display: flex;
+				flex-direction: row;
+				overflow: hidden;
+				align-items: stretch;
+				align-content: stretch;
+			}
+
+			body::before,
+			body::after {
+				content: "";
+				display: flex;
+				position: sticky;
+				top: 0;
+				height: 100vh;
+				width: 7rem;
+				background-image: url("static/rat.svg");
+				background-size: 4rem;
+				background-repeat: no-repeat space;
+				background-color: darkred;
+				background-position: center;
+			}
+
+			body::after {
+				transform: rotate(180deg);
+			}
+
+			main {
+				margin: 0 auto;
+				width: 100%;
+				font-size: 1.5rem;
+				max-width: 1200px;
+			}
+
+			h1 {
+				font-size: 3.5rem;
+				font-weight: 700;
+			}
+
+			main > button {
+				display: flex;
+				position: sticky;
+				padding: 1rem;
+				background-color: #440a0a;
+				color: whitesmoke;
+				font-weight: 700;
+				background-image: url("static/rat2.svg");
+				z-index: 4;
+				border: transparent;
+			}
+
+			button:is(:focus, :hover) {
+				background-color: #aa2222;
+			}
+
+			section {
+				margin-top: 3.5rem;
+			}
+		</style>
 	</head>
-	<body></body>
+	<body>
+		<main>
+			<header>
+				<h1>Welcome to your rat-level mock interview!</h1>
+				<p>
+					For today's prompt, we want to create a Discord bot named
+					"ratbot". This bot will be responsible for some key
+					functions to manage a hypothetical community, the "rat
+					chat".
+				</p>
+				<p>
+					The goal is to create a simple, maintainable API that we can
+					build off of in the future. Use your creativity to create an
+					awesome bot!!
+				</p>
+			</header>
+			<section>
+				<h2>Feature 1: Saving user presence</h2>
+				<p>
+					The first function of the bot will be to save a user's
+					information on join. We know when a user joins, but how can
+					we make sure the user's presence is known if we see them
+					again?
+				</p>
+			</section>
+			<section>
+				<h2>Feature 2: Saving extra details</h2>
+				<p>
+					Next, we'd like to use this saved user information to add
+					additional information about the user, based on their
+					presence in this group. There are a few different fields we
+					would like to add including <b>join date</b> and
+					<b>post count</b>—but we would also like to discover new
+					fields as-needed.
+				</p>
+			</section>
+			<section>
+				<h2>BONUS FEATURE: Word filter</h2>
+				<p>
+					We want a wordfilter that can catch the most egregious
+					rat-based naughty words, like "plague", "sewer", and
+					"stinky". The set of words we want to filter can change over
+					time, so we don't know what the words will be before we
+					check them. We also don't know when a message will be sent.
+				</p>
+			</section>
+		</main>
+	</body>
 </html>
