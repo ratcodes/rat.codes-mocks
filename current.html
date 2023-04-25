@@ -26,9 +26,12 @@
 		<link rel="icon" href="favicon.png" />
 		<style>
 			:root {
+				--base: #440a0a;
+				--accent: #aa2222;
 				font-family: "Roboto Flex", sans-serif;
 				font-size: 16px;
-				color: #16161d;
+				background-color: #16161d;
+				color: #cdcdcd;
 			}
 
 			body {
@@ -49,7 +52,7 @@
 				background-image: url("static/rat.svg");
 				background-size: 4rem;
 				background-repeat: no-repeat space;
-				background-color: darkred;
+				background-color: #440a0a;
 				background-position: center;
 			}
 
@@ -65,9 +68,31 @@
 				padding: 2rem;
 			}
 
+			header {
+				margin-bottom: 5rem;
+			}
+
+			:is(h2, h3, h4, h5, h6) {
+				display: block;
+				margin: -1rem;
+				margin-bottom: 1rem;
+				padding: 1rem;
+				padding-top: 0.6rem;
+				background: linear-gradient(
+					90deg,
+					var(--accent) -50%,
+					rgba(0, 0, 0, 0) 70%
+				);
+				border-top-left-radius: 0.75rem;
+			}
+
 			h1 {
 				font-size: 3.5rem;
 				font-weight: 700;
+			}
+
+			h2 {
+				font-weight: 600;
 			}
 
 			main > button {
@@ -89,6 +114,17 @@
 			section {
 				margin-top: 3.5rem;
 			}
+
+			figure {
+				margin: 0;
+				padding: 0;
+			}
+			figure > figcaption {
+				font-weight: bold;
+			}
+			li {
+				line-height: 1.5em;
+			}
 		</style>
 	</head>
 	<body>
@@ -96,46 +132,90 @@
 			<header>
 				<h1>Welcome to your rat-level mock interview!</h1>
 				<p>
-					For today's prompt, we want to create a Discord bot named
-					"ratbot". This bot will be responsible for some key
-					functions to manage a hypothetical community, the "rat
-					chat".
-				</p>
-				<p>
-					The goal is to create a simple, maintainable API that we can
-					build off of in the future. Use your creativity to create an
-					awesome bot!!
+					For today's prompt, we're working on a simple
+					<strong>video game!</strong>
 				</p>
 			</header>
 			<section>
-				<h2>Feature 1: Saving user presence</h2>
+				<h2>First ticket of the day: Game Logic</h2>
 				<p>
-					The first function of the bot will be to save a user's
-					information on join. We know when a user joins, but how can
-					we make sure the user's presence is known if we see them
-					again?
+					We need to setup the starting point for our game's logic.
+					First, we need a "game object" that other objects can be
+					based from. Each object needs to be able to store its
+					position, and have a built-in function to execute its game
+					logic. Then, we need to be able to update all of them in our
+					main function.
 				</p>
+				<figure>
+					<figcaption>Acceptance Criteria:</figcaption>
+					<ul>
+						<li>The "game object" is implemented in the code:</li>
+						<ul>
+							<li>Game objects can store positions;</li>
+							<li>Game objects have an exceute function;</li>
+							<li>Game objects can update on each frame.</li>
+						</ul>
+					</ul>
+				</figure>
 			</section>
 			<section>
-				<h2>Feature 2: Saving extra details</h2>
+				<h2>Second ticket: Player Object</h2>
 				<p>
-					Next, we'd like to use this saved user information to add
-					additional information about the user, based on their
-					presence in this group. There are a few different fields we
-					would like to add including <b>join date</b> and
-					<b>post count</b>—but we would also like to discover new
-					fields as-needed.
+					We're keeping it simple for now. We need a basic player
+					object that can move. The player needs to be able to store
+					their position, change their position, and update their
+					position on each frame. We also want a special move, but
+					we're unsure
 				</p>
+				<figure>
+					<figcaption>Acceptance Criteria:</figcaption>
+					<ul>
+						<li>The "player object" is implemented in the code:</li>
+						<ul>
+							<li>The player is storing their position;</li>
+							<li>The player can change their position;</li>
+							<li>
+								The player's position updates on each frame.
+							</li>
+						</ul>
+					</ul>
+				</figure>
 			</section>
 			<section>
-				<h2>BONUS FEATURE: Word filter</h2>
+				<h2>[ Stretch Goal ] SPIKE: Player Special Abilities</h2>
 				<p>
-					We want a wordfilter that can catch the most egregious
-					rat-based naughty words, like "plague", "sewer", and
-					"stinky". The set of words we want to filter can change over
-					time, so we don't know what the words will be before we
-					check them. We also don't know when a message will be sent.
+					The player character will be able to collect different
+					special abilities throughout the game. Three are currently
+					planned: a "jump", a "spin", and a "boost".
 				</p>
+				<p>
+					There may be more abilities in the future, including DLC.
+					These abilities might also need to include secondary
+					actions. How should we implement this?
+				</p>
+				<p>[ REFINE THIS DURING MEETING ]</p>
+			</section>
+			<section>
+				<h2>[ Stretch Goal ] SPIKE: Enemy Object</h2>
+				<p>
+					If we have time this sprint, we'd like to research what we
+					need for the Enemy Object.
+				</p>
+				<figure>
+					<figcaption>Questions:</figcaption>
+					<ul>
+						<li>
+							What should the enemy do, or how should we determine
+							what it should do?
+						</li>
+						<li>How would we implement this type of enemy?</li>
+						<li>How would we test this enemy?</li>
+						<ul>
+							<li>. . . in code?</li>
+							<li>. . . with players?</li>
+						</ul>
+					</ul>
+				</figure>
 			</section>
 		</main>
 	</body>
